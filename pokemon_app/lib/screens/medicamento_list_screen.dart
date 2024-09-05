@@ -111,6 +111,7 @@ class _MedicamentoListScreenState extends State<MedicamentoListScreen> {
             padding:
                 const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
             child: TextField(
+              autofocus: false,
               decoration: const InputDecoration(
                 hintText: 'Pesquisar medicamentos',
                 border: OutlineInputBorder(),
