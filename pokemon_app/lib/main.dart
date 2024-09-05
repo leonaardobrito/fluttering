@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokemon_app/screens/medicamento_list_screen.dart';
 import 'screens/pokemon_list_screen.dart';
 
 void main() {
@@ -15,7 +16,8 @@ class PokemonApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const PokemonListScreen(),
+      home: const MedicamentoListScreen(),
+      // home: const PokemonListScreen(),
     );
   }
 }

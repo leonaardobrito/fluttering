@@ -102,7 +102,7 @@ class _PokemonListScreenState extends State<PokemonListScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Pokémon List'),
+        title: const Text('Lista de medicamentos'),
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(48.0),
           child: Padding(
@@ -110,7 +110,7 @@ class _PokemonListScreenState extends State<PokemonListScreen> {
                 const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
             child: TextField(
               decoration: const InputDecoration(
-                hintText: 'Search Pokémon',
+                hintText: 'Busca por medicamentos',
                 border: OutlineInputBorder(),
               ),
               onChanged: _filterPokemons,
