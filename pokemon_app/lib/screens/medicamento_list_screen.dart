@@ -18,7 +18,7 @@ class _MedicamentoListScreenState extends State<MedicamentoListScreen> {
   final int _limit = 10;
   bool _isLoading = false;
   bool _hasMoreItems = true;
-  String _searchQuery = 'di'; // Busca inicial padrão
+  String _searchQuery = 'di'; // Busca inicial padrão PROVISORIO
   final ScrollController _scrollController = ScrollController();
 
   @override
@@ -104,24 +104,97 @@ class _MedicamentoListScreenState extends State<MedicamentoListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Lista de medicamentos'),
+        toolbarHeight: 90.0,
+        backgroundColor: const Color.fromARGB(223, 11, 24, 49),
+        title: const Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'e-CIDADÃO SAÚDE',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20.0,
+                letterSpacing: 1.2,
+                color: Colors.white,
+              ),
+            ),
+            Text(
+              'JARAGUÁ DO SUL',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 18.0,
+                letterSpacing: 1.2,
+                color: Color.fromARGB(255, 5, 185, 240),
+              ),
+            ),
+            Text(
+              'MEDICAMENTOS',
+              style: TextStyle(
+                fontSize: 16.0,
+                color: Colors.white,
+              ),
+            ),
+          ],
+        ),
+        centerTitle: true,
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(48.0),
           child: Padding(
             padding:
                 const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-            child: TextField(
-              autofocus: false,
-              decoration: const InputDecoration(
-                hintText: 'Pesquisar medicamentos',
-                border: OutlineInputBorder(),
-              ),
-              onChanged: _filterMedicamentos,
+            child: Row(
+              children: [
+                Transform(
+                  transform: Matrix4.rotationY(3.14),
+                  alignment: Alignment.center,
+                  child: const Icon(
+                    Icons.search,
+                    color: Colors.white,
+                  ),
+                ),
+                const SizedBox(width: 8.0),
+                Expanded(
+                  child: TextField(
+                    autofocus: false,
+                    style: const TextStyle(color: Colors.white),
+                    decoration: const InputDecoration(
+                      hintText: 'Buscar pelo nome',
+                      hintStyle: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.w300),
+                      border: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.white,
+                          width: 1.0,
+                        ),
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.white,
+                          width: 1.0,
+                        ),
+                      ),
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.white,
+                          width: 1.0,
+                        ),
+                      ),
+                      filled: false,
+                      fillColor: Colors.transparent,
+                      contentPadding: EdgeInsets.symmetric(vertical: 8.0),
+                    ),
+                    onChanged: _filterMedicamentos,
+                  ),
+                ),
+              ],
             ),
           ),
         ),
       ),
-      body: _buildMedicamentoList(),
+      body: Container(
+        color: const Color.fromARGB(223, 33, 59, 105),
+        child: _buildMedicamentoList(),
+      ),
     );
   }
 
@@ -136,8 +209,14 @@ class _MedicamentoListScreenState extends State<MedicamentoListScreen> {
 
         final medicamento = _medicamentos[index];
         return ListTile(
-          title: Text(medicamento.descricao.capitalize()),
-          trailing: Text(medicamento.uso),
+          title: Text(
+            medicamento.descricao.capitalize(),
+            style: const TextStyle(color: Colors.white),
+          ),
+          trailing: Text(
+            medicamento.uso,
+            style: const TextStyle(color: Colors.white),
+          ),
           onTap: () {
             Navigator.push(
               context,
