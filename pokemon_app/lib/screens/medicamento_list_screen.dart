@@ -83,7 +83,7 @@ class _MedicamentoListScreenState extends State<MedicamentoListScreen> {
   }
 
   void _filterMedicamentos(String query) {
-    if (query.length >= 3) {
+    if (query.length >= 3 || query.isEmpty) {
       setState(() {
         _searchQuery = query;
         _medicamentos.clear();
