@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pokemon_app/screens/medicamento_list_screen.dart';
-import 'screens/pokemon_list_screen.dart';
 
 void main() {
   runApp(const PokemonApp());
@@ -17,7 +16,6 @@ class PokemonApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const MedicamentoListScreen(),
-      // home: const PokemonListScreen(),
     );
   }
 }
