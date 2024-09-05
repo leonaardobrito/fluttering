@@ -1,4 +1,4 @@
-name: medicamentapp
+name: pokemon_app
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -30,8 +30,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  get: ^4.6.6
-  dio: ^5.7.0
+  http: ^1.2.2
+  dio: ^5.0.0 
+  get: ^4.6.5
+  lazy_load_scrollview: ^1.3.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
