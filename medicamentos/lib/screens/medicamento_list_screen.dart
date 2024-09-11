@@ -72,7 +72,7 @@ class _MedicamentoListScreenState extends State<MedicamentoListScreen> {
   }
 
   void _onScroll() {
-    final offsetParaChamadaApi = _tileHeight * 5;
+    final offsetParaChamadaApi = _tileHeight * 3;
 
     if (_scrollController.position.pixels >=
             _scrollController.position.maxScrollExtent - offsetParaChamadaApi &&
