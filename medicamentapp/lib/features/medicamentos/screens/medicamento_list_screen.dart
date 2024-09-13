@@ -9,10 +9,10 @@ class MedicamentoListScreen extends StatefulWidget {
   const MedicamentoListScreen({super.key});
 
   @override
-  _MedicamentoListScreenState createState() => _MedicamentoListScreenState();
+  MedicamentoListScreenState createState() => MedicamentoListScreenState();
 }
 
-class _MedicamentoListScreenState extends State<MedicamentoListScreen> {
+class MedicamentoListScreenState extends State<MedicamentoListScreen> {
   final MedicamentoApiService _apiService = MedicamentoApiService();
   final List<Medicamento> _medicamentos = [];
   int _page = 1;
@@ -31,7 +31,8 @@ class _MedicamentoListScreenState extends State<MedicamentoListScreen> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    // Calcula o limite após o contexto estar disponível
+    // função chamada IMEDIATAMENTE após initState()
+    // calcula após o contexto ficar disponível
     _limit = _calculateLimit();
     _fetchMedicamentos();
   }
@@ -96,7 +97,7 @@ class _MedicamentoListScreenState extends State<MedicamentoListScreen> {
         _medicamentos.clear();
         _page = 1;
         _hasMoreItems = true;
-        _limit = _calculateLimit(); // Recalcula o limite com base na tela atual
+        _limit = _calculateLimit(); // recalcula lim. com base no screensize
       });
     } else if (query.length >= 3) {
       setState(() {
@@ -104,17 +105,17 @@ class _MedicamentoListScreenState extends State<MedicamentoListScreen> {
         _medicamentos.clear();
         _page = 1;
         _hasMoreItems = true;
-        _limit = _calculateLimit(); // Recalcula o limite com base na tela atual
+        _limit = _calculateLimit();
       });
     }
     _fetchMedicamentos();
   }
 
-  // Calcula o número de itens a serem carregados com base na altura da tela
+  // calcula qtos itens devem ser carregados com base na altura da tela atual
   int _calculateLimit() {
     final screenHeight = MediaQuery.of(context).size.height;
-    const tileHeight = 40.0; // Altura aproximada de cada item da lista
-    return (screenHeight / tileHeight).floor(); // Calcula quantos cabem na tela
+    const tileHeight = 40.0;
+    return (screenHeight / tileHeight).floor(); // qtos tiles cabem na tela
   }
 
   @override

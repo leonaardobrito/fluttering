@@ -1,5 +1,48 @@
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 import '../../features/medicamentos/models/medicamento.dart';
 
+class MedicamentoApiService {
+  final String baseUrl = 'https://api.olostech.com/medicamento';
+  Future<Map<String, dynamic>> fetchMedicamentos(
+    String descricao,
+    int limit,
+    int page,
+  ) async {
+    try {
+      final endpoint = (descricao.isEmpty)
+          ? '$baseUrl/list?limit=$limit&page=$page'
+          : '$baseUrl?descricao=$descricao&limit=$limit&page=$page';
+
+      final response = await http.get(Uri.parse(endpoint));
+
+      if (response.statusCode == 200) {
+        final data = json.decode(utf8.decode(response.bodyBytes));
+
+        if (data != null && data['data'] != null) {
+          final medicamentos = (data['data'] as List)
+              .map<Medicamento>((item) => Medicamento.fromJson(item))
+              .toList();
+
+          return {
+            'medicamentos': medicamentos,
+            'pagination': data['_pagination'] ?? {},
+          };
+        } else {
+          throw Exception('Formato de dados inesperado da API.');
+        }
+      } else {
+        throw Exception(
+            'Falha ao carregar medicamentos. Status: ${response.statusCode}');
+      }
+    } catch (e) {
+      throw Exception('Erro ao carregar medicamentos: $e');
+    }
+  }
+}
+
+/* 
+import '../../features/medicamentos/models/medicamento.dart';
 class MedicamentoApiService {
   Future<Map<String, dynamic>> fetchMedicamentos(
     String descricao,
@@ -299,56 +342,4 @@ class MedicamentoApiService {
 
 
 
-
-
-/* import 'dart:convert';
-import 'package:http/http.dart' as http;
-import '../../features/medicamentos/models/medicamento.dart';
-
-class MedicamentoApiService {
-  final String baseUrl = 'http://10.120.0.165:9502/medicamento';
-
-  Future<Map<String, dynamic>> fetchMedicamentos(
-    String descricao,
-    int limit,
-    int page,
-  ) async {
-    try {
-      // Montagem do endpoint baseado na query de descrição
-      final endpoint = (descricao.isEmpty)
-          ? '$baseUrl/list?limit=$limit&page=$page'
-          : '$baseUrl?descricao=$descricao&limit=$limit&page=$page';
-
-      // Chamada à API
-      final response = await http.get(Uri.parse(endpoint));
-
-      // Checa se o status da resposta é 200 (sucesso)
-      if (response.statusCode == 200) {
-        // Decodifica a resposta usando utf8 para garantir caracteres corretos
-        final data = json.decode(utf8.decode(response.bodyBytes));
-
-        // Verifica se os dados esperados estão na estrutura correta
-        if (data != null && data['data'] != null) {
-          // Converte os dados em uma lista de objetos Medicamento
-          final medicamentos = (data['data'] as List)
-              .map<Medicamento>((item) => Medicamento.fromJson(item))
-              .toList();
-
-          return {
-            'medicamentos': medicamentos,
-            'pagination': data['_pagination'] ?? {},
-          };
-        } else {
-          throw Exception('Formato de dados inesperado da API.');
-        }
-      } else {
-        throw Exception(
-            'Falha ao carregar medicamentos. Status: ${response.statusCode}');
-      }
-    } catch (e) {
-      // Retorna exceção caso haja falha na chamada ou parsing
-      throw Exception('Erro ao carregar medicamentos: $e');
-    }
-  }
-}
  */
