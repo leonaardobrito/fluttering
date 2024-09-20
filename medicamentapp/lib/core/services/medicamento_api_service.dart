@@ -1,4 +1,4 @@
-import 'dart:convert';
+/* import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../../features/medicamentos/models/medicamento.dart';
 
@@ -39,10 +39,10 @@ class MedicamentoApiService {
       throw Exception('Erro ao carregar medicamentos: $e');
     }
   }
-}
+} */
 
-/* 
 import '../../features/medicamentos/models/medicamento.dart';
+
 class MedicamentoApiService {
   Future<Map<String, dynamic>> fetchMedicamentos(
     String descricao,
@@ -339,7 +339,3 @@ class MedicamentoApiService {
     };
   }
 }
-
-
-
- */

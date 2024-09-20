@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'features/medicamentos/screens/medicamento_list_screen.dart';
+//import 'features/medicamentos/screens/medicamento_list_screen.dart';
+//import 'features/medicamentos/screens/mensagens_inicio.dart';
+//import 'features/medicamentos/screens/consultas.dart';
+//import 'features/medicamentos/screens/mensagens.dart';
+import 'features/medicamentos/screens/mensagens_avisos.dart';
 
 void main() {
   runApp(const MedicamentApp());
@@ -15,7 +19,11 @@ class MedicamentApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MedicamentoListScreen(),
+      //home: const MedicamentoListScreen(),
+      //home: const MensagensAvisosScreen(),
+      //home: CompromissoAgendadoScreen(),
+      //home: MensagensScreen(),
+      home: MensagensAvisosScreen(),
     );
   }
 }

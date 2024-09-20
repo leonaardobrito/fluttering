@@ -8,7 +8,6 @@ class MedicamentoAppBar extends StatefulWidget implements PreferredSizeWidget {
 
   @override
   MedicamentoAppBarState createState() => MedicamentoAppBarState();
-
   @override
   Size get preferredSize => const Size.fromHeight(138.0);
 }
