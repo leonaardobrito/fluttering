@@ -11,7 +11,7 @@ class MedicamentApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Lista de Medicamentos',
+      title: 'e-Cidadão Saúde',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),

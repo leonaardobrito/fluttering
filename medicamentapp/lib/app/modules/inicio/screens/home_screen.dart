@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-/* import 'package:flutter_svg/flutter_svg.dart';
-import '../../medicamentos/screens/mensagens.dart';
-import '../models/menu_item_model.dart'; */
+import '../../medicamentos/screens/medicamento_list_screen.dart';
 import '../../notificacoes/screens/mensagens_avisos.dart';
-//import '../../medicamentos/screens/mensagens_avisos.dart';
-
 import '../widgets/app_bar.dart';
 import '../widgets/fontSize_tunning_button.dart';
 import '../widgets/greetings.dart';
@@ -34,22 +30,21 @@ class _HomeScreenState extends State<HomeScreen> {
         );
         break;
       case 1:
-        // Navigator.push(context, MaterialPageRoute(builder: (context) => MinhasAgendasScreen()));
         Navigator.push(
           context,
           MaterialPageRoute(
               builder: (context) =>
-                  MensagensAvisosScreen()), // Alterar para sua tela
+                  MedicamentoListScreen()), // Alterar para sua tela
         );
         break;
       case 2:
-        // Navigator.push(context, MaterialPageRoute(builder: (context) => MinhaSaudeScreen()));
+        // TODO: Navigator.push(context, MaterialPageRoute(builder: (context) => MinhaSaudeScreen()));
         break;
       case 3:
-        // Navigator.push(context, MaterialPageRoute(builder: (context) => MeuPerfilScreen()));
+        // TODO: Navigator.push(context, MaterialPageRoute(builder: (context) => MeuPerfilScreen()));
         break;
       case 4:
-        // Navigator.push(context, MaterialPageRoute(builder: (context) => OutrosServicosScreen()));
+        // TODO: Navigator.push(context, MaterialPageRoute(builder: (context) => OutrosServicosScreen()));
         break;
     }
   }
