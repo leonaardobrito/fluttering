@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/flutter_svg.dart'; // Adicionando suporte para SVG
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
@@ -9,20 +9,21 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: const Color.fromRGBO(8, 29, 49, 0.875),
-      centerTitle: true,
+      backgroundColor: const Color.fromRGBO(8, 29, 49, 0.875), // Azul escuro
+      centerTitle: true, // Centralizar título
       title: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          // Logo à esquerda
           SvgPicture.asset(
-            'lib/app/resources/Brasão.svg',
-            height: 32,
-            color: Colors.white,
+            'lib/app/resources/Brasão.svg', // Caminho do seu arquivo SVG
+            height: 32, // Altura do brasão
+            color: Colors.white, // Aplicar cor branca ao logo
           ),
-          const SizedBox(width: 8),
-          const Column(
+          const SizedBox(width: 8), // Espaçamento entre logo e título
+          Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+            children: const [
               Text(
                 'e-Cidadão Saúde',
                 style: TextStyle(

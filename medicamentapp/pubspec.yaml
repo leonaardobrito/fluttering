@@ -33,6 +33,7 @@ dependencies:
   get: ^4.6.6
   dio: ^5.7.0
   http: ^1.2.2
+  flutter_svg: ^2.0.4
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -60,6 +61,19 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  assets:
+    - lib/app/resources/home_appbar.svg
+    - lib/app/resources/Brasão.svg
+    - lib/app/resources/icons/TamanhoTexto.svg
+    - lib/app/resources/icons/Menos.svg
+    - lib/app/resources/icons/Mais.svg
+    - lib/app/resources/icons/VerGrade.svg
+    - lib/app/resources/icons/VerLista.svg
+    - lib/app/resources/icons/Notificação.svg
+    - lib/app/resources/icons/Agendamento.svg
+    - lib/app/resources/icons/Automonitoramento.svg
+    - lib/app/resources/icons/Paciente.svg
+    - lib/app/resources/icons/Outros.svg
 
   # To add assets to your application, add an assets section, like this:
   # assets:

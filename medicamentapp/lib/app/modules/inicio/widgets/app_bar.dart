@@ -2,43 +2,52 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final String title;
-
-  const CustomAppBar({super.key, required this.title});
+  const CustomAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: const Color.fromRGBO(8, 29, 49, 0.875),
-      centerTitle: true,
-      title: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+      backgroundColor: const Color(0xFF081D31),
+      titleSpacing: 0,
+      title: Stack(
         children: [
-          SvgPicture.asset(
-            'lib/app/resources/Brasão.svg',
-            height: 32,
-            color: Colors.white,
+          const Align(
+            alignment: Alignment.center,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  'e-Cidadão Saúde',
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+                Text(
+                  'JARAGUÁ DO SUL/SC',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w900,
+                    fontSize: 16,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
+            ),
           ),
-          const SizedBox(width: 8),
-          const Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'e-Cidadão Saúde',
-                style: TextStyle(
-                  fontSize: 14,
-                  color: Colors.white,
-                ),
+          Positioned(
+            left: 0,
+            top: 0,
+            bottom: 0,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: SvgPicture.asset(
+                'lib/app/resources/Brasão.svg',
+                height: 40,
+                color: Colors.white,
               ),
-              Text(
-                'JARAGUÁ DO SUL/SC',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
-              ),
-            ],
+            ),
           ),
         ],
       ),

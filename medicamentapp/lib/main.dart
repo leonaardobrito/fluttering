@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 //import 'features/medicamentos/screens/mensagens_inicio.dart';
 //import 'features/medicamentos/screens/consultas.dart';
 //import 'features/medicamentos/screens/mensagens.dart';
-import 'features/medicamentos/screens/mensagens_avisos.dart';
+//import 'features/medicamentos/screens/mensagens_avisos.dart';
+//import 'features/inicio/screens/home_screen.dart';
+import '/app/modules/inicio/screens/home_screen.dart';
 
 void main() {
   runApp(const MedicamentApp());
@@ -23,7 +25,8 @@ class MedicamentApp extends StatelessWidget {
       //home: const MensagensAvisosScreen(),
       //home: CompromissoAgendadoScreen(),
       //home: MensagensScreen(),
-      home: MensagensAvisosScreen(),
+      //home: MensagensAvisosScreen(),
+      home: HomeScreen(),
     );
   }
 }
