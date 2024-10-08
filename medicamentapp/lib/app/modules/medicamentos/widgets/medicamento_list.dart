@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:medicamentapp/shared/widgets/loading_indicator.dart';
-import 'package:medicamentapp/core/widgets/medicamento_app_bar.dart';
-import 'package:medicamentapp/core/widgets/medicamento_tile.dart';
-import 'package:medicamentapp/core/services/medicamento_api_service.dart';
-import 'package:medicamentapp/features/medicamentos/models/medicamento.dart';
+import 'package:medicamentapp/app/shared/widgets/loading_indicator.dart';
+import '../../../shared/widgets/medicamento_app_bar.dart';
+import '../../../shared/widgets/medicamento_tile.dart';
+import '../../../shared/services/medicamento_api_service.dart';
+import '../models/medicamento.dart';
 
 class MedicamentoListScreen extends StatefulWidget {
   const MedicamentoListScreen({super.key});

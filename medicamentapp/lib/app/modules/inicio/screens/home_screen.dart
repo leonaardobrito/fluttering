@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import '../models/menu_item_model.dart';
+/* import 'package:flutter_svg/flutter_svg.dart';
+import '../../medicamentos/screens/mensagens.dart';
+import '../models/menu_item_model.dart'; */
+import '../../notificacoes/screens/mensagens_avisos.dart';
+//import '../../medicamentos/screens/mensagens_avisos.dart';
+
 import '../widgets/app_bar.dart';
 import '../widgets/fontSize_tunning_button.dart';
 import '../widgets/greetings.dart';
@@ -19,6 +23,36 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   bool isGrid = true;
   double fontSize = 16.0;
+
+  void navigateToScreen(int index) {
+    switch (index) {
+      case 0:
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => const MensagensAvisosScreen()),
+        );
+        break;
+      case 1:
+        // Navigator.push(context, MaterialPageRoute(builder: (context) => MinhasAgendasScreen()));
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) =>
+                  MensagensAvisosScreen()), // Alterar para sua tela
+        );
+        break;
+      case 2:
+        // Navigator.push(context, MaterialPageRoute(builder: (context) => MinhaSaudeScreen()));
+        break;
+      case 3:
+        // Navigator.push(context, MaterialPageRoute(builder: (context) => MeuPerfilScreen()));
+        break;
+      case 4:
+        // Navigator.push(context, MaterialPageRoute(builder: (context) => OutrosServicosScreen()));
+        break;
+    }
+  }
 
   // TODO: Verificar máximos e minimos.
   void toggleLayout(bool isGridLayout) {
@@ -85,15 +119,27 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       itemCount: menuItems.length,
                       itemBuilder: (context, index) {
-                        return GridTileWidget(
-                            menuItem: menuItems[index], fontSize: fontSize);
+                        return GestureDetector(
+                          onTap: () => navigateToScreen(
+                              index), // Adicionando a navegação
+                          child: GridTileWidget(
+                            menuItem: menuItems[index],
+                            fontSize: fontSize,
+                          ),
+                        );
                       },
                     )
                   : ListView.builder(
                       itemCount: menuItems.length,
                       itemBuilder: (context, index) {
-                        return ListTileWidget(
-                            menuItem: menuItems[index], fontSize: fontSize);
+                        return GestureDetector(
+                          onTap: () => navigateToScreen(
+                              index), // Adicionando a navegação
+                          child: ListTileWidget(
+                            menuItem: menuItems[index],
+                            fontSize: fontSize,
+                          ),
+                        );
                       },
                     ),
             ),

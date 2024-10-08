@@ -41,7 +41,7 @@ class MedicamentoApiService {
   }
 } */
 
-import '../../features/medicamentos/models/medicamento.dart';
+import '../../modules/medicamentos/models/medicamento.dart';
 
 class MedicamentoApiService {
   Future<Map<String, dynamic>> fetchMedicamentos(

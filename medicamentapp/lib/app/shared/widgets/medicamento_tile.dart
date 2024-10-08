@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medicamentapp/features/medicamentos/models/medicamento.dart';
+import '../../modules/medicamentos/models/medicamento.dart';
 
 class MedicamentoTile extends StatelessWidget {
   final Medicamento medicamento;

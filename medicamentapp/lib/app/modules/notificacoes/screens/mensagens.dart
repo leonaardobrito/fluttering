@@ -1,21 +1,4 @@
-import 'package:flutter/material.dart';
-
-/* void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Mensagens e Avisos',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MensagensScreen(),
-    );
-  }
-} */
+/* import 'package:flutter/material.dart';
 
 class MensagensScreen extends StatefulWidget {
   const MensagensScreen({super.key});
@@ -25,7 +8,7 @@ class MensagensScreen extends StatefulWidget {
 }
 
 class _MensagensScreenState extends State<MensagensScreen> {
-  int _selectedIndex = 0; // Controla a aba selecionada
+  int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -39,17 +22,17 @@ class _MensagensScreenState extends State<MensagensScreen> {
           ),
         ),
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
-            // Implementar ação de voltar
+            // TODO: Implementar ação de voltar
           },
         ),
-        actions: [
+        actions: const [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: CircleAvatar(
               backgroundImage: NetworkImage(
-                'https://via.placeholder.com/150', // Substituir pela URL da imagem do perfil
+                'https://via.placeholder.com/150', // TODO: Substituir pela URL da imagem do perfil
               ),
             ),
           )
@@ -57,7 +40,6 @@ class _MensagensScreenState extends State<MensagensScreen> {
       ),
       body: Column(
         children: [
-          // Abas de "Todas", "Não Lidas", "Lidas"
           TabBarMenu(
             selectedIndex: _selectedIndex,
             onTabSelected: (index) {
@@ -66,11 +48,10 @@ class _MensagensScreenState extends State<MensagensScreen> {
               });
             },
           ),
-          // Conteúdo baseado na aba selecionada
           Expanded(
             child: _selectedIndex == 0
-                ? MensagemList(naoLidas: true)
-                : MensagemList(naoLidas: false),
+                ? const MensagemList(naoLidas: true)
+                : const MensagemList(naoLidas: false),
           ),
         ],
       ),
@@ -281,3 +262,4 @@ class CompromissoAgendadoScreen extends StatelessWidget {
     );
   }
 }
+ */

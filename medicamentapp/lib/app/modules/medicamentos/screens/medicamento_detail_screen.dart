@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medicamentapp/core/utils/string_extension.dart';
+import '../../../shared/utils/string_extension.dart';
 import '../models/medicamento.dart';
 
 class MedicamentoDetailScreen extends StatelessWidget {

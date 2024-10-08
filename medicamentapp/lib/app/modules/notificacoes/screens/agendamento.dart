@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'consultas.dart';
-import 'package:medicamentapp/features/medicamentos/widgets/app_bar.dart';
+import '../widgets/app_bar.dart';
 
 class AgendamentoScreen extends StatelessWidget {
   const AgendamentoScreen({super.key});

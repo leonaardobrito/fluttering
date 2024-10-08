@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:medicamentapp/features/medicamentos/widgets/mensagens_lista.dart';
-import 'package:medicamentapp/features/medicamentos/widgets/app_bar.dart';
-import 'package:medicamentapp/features/medicamentos/widgets/tab_button.dart';
+import '../widgets/mensagens_lista.dart';
+import '../widgets/app_bar.dart';
+import '../widgets/tab_button.dart';
 
 class MensagensAvisosScreen extends StatefulWidget {
   const MensagensAvisosScreen({super.key});

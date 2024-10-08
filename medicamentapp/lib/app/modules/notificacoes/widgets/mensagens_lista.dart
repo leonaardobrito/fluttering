@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medicamentapp/features/medicamentos/screens/agendamento.dart';
+import '../screens/agendamento.dart';
 
 class MessageList extends StatelessWidget {
   final int selectedTabIndex;
@@ -51,7 +51,7 @@ class MessageList extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        // TODO: passar os parametros do agendamento
+                          // TODO: passar os parametros do agendamento
                           builder: (context) => const AgendamentoScreen()),
                     );
                   }

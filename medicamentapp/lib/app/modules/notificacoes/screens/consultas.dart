@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medicamentapp/features/medicamentos/widgets/app_bar.dart';
+import '../widgets/app_bar.dart';
 
 class ConsultaScreen extends StatelessWidget {
   const ConsultaScreen({super.key});
