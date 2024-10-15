@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/app_bar.dart';
+import '../../../shared/utils/olos_colors.dart';
 
 class ConsultaScreen extends StatelessWidget {
   const ConsultaScreen({super.key});
@@ -175,7 +176,7 @@ class ConsultaScreen extends StatelessWidget {
                         // TODO: ação para solicitar transferência
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.orange,
+                        backgroundColor: OlosColors.laranja500,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
                         ),

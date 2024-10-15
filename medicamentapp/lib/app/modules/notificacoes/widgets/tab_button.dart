@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../shared/utils/olos_colors.dart';
 
 class TabButton extends StatelessWidget {
   final String title;
@@ -29,7 +30,7 @@ class TabButton extends StatelessWidget {
             Container(
               margin: const EdgeInsets.only(top: 4),
               height: 2,
-              width: 60,
+              width: 40,
               color: Colors.blue,
             ),
         ],

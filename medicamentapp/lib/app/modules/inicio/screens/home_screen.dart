@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../medicamentos/screens/medicamento_list_screen.dart';
-import '../../notificacoes/screens/mensagens_avisos.dart';
+import '../../notificacoes/screens/avisos.dart';
 import '../widgets/app_bar.dart';
 import '../widgets/fontSize_tunning_button.dart';
 import '../widgets/greetings.dart';
@@ -8,6 +8,7 @@ import '../widgets/grid_tile_widget.dart';
 import '../widgets/layout_toggle_button.dart';
 import '../widgets/list_tile_widget.dart';
 import '../models/menu_items.dart';
+import '../../../shared/utils/olos_colors.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -32,9 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
       case 1:
         Navigator.push(
           context,
-          MaterialPageRoute(
-              builder: (context) =>
-                  MedicamentoListScreen()), // Alterar para sua tela
+          MaterialPageRoute(builder: (context) => MedicamentoListScreen()),
         );
         break;
       case 2:
@@ -57,17 +56,17 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void increaseFontSize() {
-    if (fontSize <= 20) {
+    if (fontSize <= 19) {
       setState(() {
-        fontSize += 2.0;
+        fontSize += 1.0;
       });
     }
   }
 
   void decreaseFontSize() {
-    if (fontSize >= 14) {
+    if (fontSize >= 16) {
       setState(() {
-        fontSize -= 2.0;
+        fontSize -= 1.0;
       });
     }
   }
@@ -79,8 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
         preferredSize: Size.fromHeight(56),
         child: CustomAppBar(),
       ),
-      // olos/50
-      backgroundColor: const Color.fromARGB(255, 232, 235, 238),
+      backgroundColor: OlosColors.olos50,
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -115,8 +113,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       itemCount: menuItems.length,
                       itemBuilder: (context, index) {
                         return GestureDetector(
-                          onTap: () => navigateToScreen(
-                              index), // Adicionando a navegação
+                          onTap: () => navigateToScreen(index),
                           child: GridTileWidget(
                             menuItem: menuItems[index],
                             fontSize: fontSize,
@@ -128,8 +125,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       itemCount: menuItems.length,
                       itemBuilder: (context, index) {
                         return GestureDetector(
-                          onTap: () => navigateToScreen(
-                              index), // Adicionando a navegação
+                          onTap: () => navigateToScreen(index),
                           child: ListTileWidget(
                             menuItem: menuItems[index],
                             fontSize: fontSize,
